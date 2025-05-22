@@ -110,11 +110,14 @@ export function Table(props: TableProps) {
   });
 
   const { rows } = table.getRowModel();
+  
   const rowVirtualizer = useVirtual({
     parentRef: tableContainerRef,
     size: rows.length,
     overscan: 10,
+    estimateSize: React.useCallback(() => 35, []), // Add this line to provide size estimation
   });
+
   const { virtualItems: virtualRows, totalSize } = rowVirtualizer;
 
   const paddingTop = virtualRows.length > 0 ? virtualRows?.[0]?.start || 0 : 0;
