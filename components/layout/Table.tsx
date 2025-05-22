@@ -9,7 +9,7 @@ import {
   Table,
   Getter,
 } from "@tanstack/react-table";
-import { useVirtual } from "react-virtual";
+import { useVirtual } from "@tanstack/react-virtual";
 import isEqual from "lodash.isequal";
 
 import { IDataset, IDatasetRecord } from "../../types";
